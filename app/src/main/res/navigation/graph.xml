@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/mainFeedFragment">
+
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.zerdi.shoppingapp.presentation.basketfeed.BasketFragment"
+        android:label="fragment_basket"
+        tools:layout="@layout/fragment_basket" />
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.zerdi.shoppingapp.presentation.webview.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="weblink"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFeedFragment"
+        android:name="com.zerdi.shoppingapp.presentation.mainfeed.MainFeedFragment"
+        android:label="fragment_main_feed"
+        tools:layout="@layout/fragment_main_feed" >
+        <action
+            android:id="@+id/action_mainFeedFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+</navigation>
